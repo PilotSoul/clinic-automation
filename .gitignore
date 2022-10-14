@@ -1,0 +1,6 @@
+.DS_Store
+venv/
+clinic_management/migrations/
+db.sqlite3
+.idea/
+*.pyc
