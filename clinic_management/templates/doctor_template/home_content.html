@@ -1,70 +1,53 @@
-{% extends 'admin_template/base_template.html' %}
+{% extends 'doctor_template/base_template.html' %}
 {% load static %}
-{% block page_title %} Здравствуйте, {{ user.username }} {% endblock page_title %}
+{% block page_title %} Главная {% endblock page_title %}
 {% block main_content %}
 <section class="content">
       <div class="container-fluid">
           <div class="row">
-              <div class="col-lg-3 col-6">
+              <div class="col-lg col-3">
                   <div class="small-box bg-info">
                       <div class="inner">
-                          <h3>150</h3>
-                          <p>Материалы</p>
+                          <h3>3000</h3>
+                          <p>Магазин</p>
                       </div>
                       <div class="icon">
                           <i class="ion ion-bag"></i>
                       </div>
-                       {% url 'add_consumable' as add_consumable %}
-                      <a href="{{ add_consumable }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
+                      <a href="#" class="small-box-footer">Перейти<i class="fas fa-arrow-circle-right"></i></a>
                   </div>
               </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg col-3">
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3>5</h3>
 
                 <p>Документы</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-                 {% url 'look_documents' as look_document %}
-              <a href="{{ look_document }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/look_doctor_document/{{ user.id }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg col-3">
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>8</h3>
+                <h3>1</h3>
 
-                <p>Пользователи</p>
+                <p>Профиль</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-                {% url 'show_users' as show_users %}
-              <a href="{{ show_users }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/doctor_self/{{ user.id }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <div class="col-lg-3 col-6">
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-                <p>Отчеты</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-                {% url 'create_document' as create_document %}
-              <a href="{{ create_document }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
-            </div>
           </div>
         </div>
-      </div>
-    <div class="row">
+          <div class="row">
               <div class="card card-widget" style="width: 100%;">
                   <div class="card-header">
                       <div class="user-block">
@@ -120,5 +103,6 @@
                   </div>
               </div>
           </div>
+      </div>
     </section>
 {% endblock main_content %}

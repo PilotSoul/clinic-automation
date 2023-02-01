@@ -1,19 +1,59 @@
-
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.urls import path
-from clinic_management import views, admin_views
+from clinic_management import views, admin_views, patient_views, doctor_views
 from config import settings
 
 
 urlpatterns = [
     path('demo/', views.showDemoPage),
-    path('', views.showLoginPage),
-    path('get_user_details', views.getUserDetails),
-    path('logout_user', views.logoutUser),
+    path('', views.showLoginPage, name="show_login"),
     path('admin/', admin.site.urls),
-    path('doLogin', views.doLogin),
-    path('admin_home/', admin_views.admin_home),
-    path('add_doctor/', admin_views.add_doctor),
-    path('add_doctor_save/', admin_views.add_doctor_save)
+    path('get_user_details', views.getUserDetails),
+    path('logout_user', views.logoutUser, name="logout_user"),
+    path('doLogin', views.doLogin, name="do_login"),
+    path('admin_home/', admin_views.admin_home, name="admin_home"),
+    path('add_doctor/', admin_views.add_doctor, name="add_doctor"),
+    path('add_doctor_save/', admin_views.add_doctor_save, name="add_doctor_save"),
+    path('add_service/', admin_views.add_service, name="add_service"),
+    path('add_service_save/', admin_views.add_service_save, name="add_service_save"),
+    path('edit_service/<str:service_id>', admin_views.edit_service, name="edit_service"),
+    path('edit_service_save/', admin_views.edit_service_save, name="edit_service_save"),
+    path('add_staff/', admin_views.add_staff, name="add_staff"),
+    path('add_staff_save/', admin_views.add_staff_save, name="add_staff_save"),
+    path('edit_staff/<str:staff_id>', admin_views.edit_staff, name="edit_staff"),
+    path('edit_staff_save/', admin_views.edit_staff_save, name="edit_staff_save"),
+    path('add_patient/', admin_views.add_patient, name="add_patient"),
+    path('add_patient_save/', admin_views.add_patient_save, name="add_patient_save"),
+    path('edit_patient/<str:patient_id>', admin_views.edit_patient, name="edit_patient"),
+    path('edit_patient_save/', admin_views.edit_patient_save, name="edit_patient_save"),
+    path('delete_patient/<str:patient_id>', admin_views.delete_patient, name="delete_patient"),
+    path('delete_service/<str:service_id>', admin_views.delete_service, name="delete_service"),
+    path('edit_doctor/<str:doctor_id>', admin_views.edit_doctor, name="edit_doctor"),
+    path('edit_doctor_save/', admin_views.edit_doctor_save, name="edit_doctor_save"),
+    path('delete_doctor/<str:doctor_id>', admin_views.delete_doctor, name="delete_doctor"),
+    path('create_document/', admin_views.create_document, name="create_document"),
+    path('create_document_save/', admin_views.create_document_save, name="create_document_save"),
+    path('create_consumable/', admin_views.create_consumable),
+    path('create_service/', admin_views.create_service),
+    path('create_appointment/', admin_views.create_appointment),
+    path('patient_home/', patient_views.patient_home, name="patient_home"),
+    path('patient_signup/', patient_views.patient_signup, name="patient_signup"),
+    path('patient_appointments/', patient_views.patient_appointments, name="patient_appointments"),
+    path('look_documents/', admin_views.look_documents, name="look_documents"),
+    path('create_doctor_document/', admin_views.create_doctor_document, name="create_doctor_document"),
+    path('create_patient_document/', admin_views.create_patient_document, name="create_patient_document"),
+    path('users/', admin_views.show_users, name="show_users"),
+    path('add_consumable/', admin_views.add_consumable, name="add_consumable"),
+    path('add_consumable_save/', admin_views.add_consumable_save, name="add_consumable_save"),
+    path('add_schedule/', admin_views.add_schedule, name="add_schedule"),
+    path('patient_self/<str:patient_id>', patient_views.patient_self, name="patient_self"),
+    path('look_patient_document/<str:patient_id>', patient_views.look_patient_document, name="look_patient_document"),
+    path('doctor_home/', doctor_views.doctor_home, name="doctor_home"),
+    path('look_doctor_document/<str:doctor_id>', doctor_views.look_doctor_document, name="look_doctor_document"),
+    path('doctor_calendar/<str:doctor_id>', doctor_views.doctor_calendar, name="doctor_calendar"),
+    path('doctor_appointments/<str:doctor_id>', doctor_views.doctor_appointments, name="doctor_ppointments"),
+    path('edit_doctor_app/<str:doctor_id>', doctor_views.edit_doctor_app, name="edit_doctor_app"),
+    path('doctor_self/<str:doctor_id>', doctor_views.doctor_self, name="doctor_self"),
+    path('form_c/', admin_views.form_c, name="form_c")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

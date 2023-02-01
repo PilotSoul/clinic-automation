@@ -1,0 +1,61 @@
+{% extends 'doctor_template/base_template.html' %}
+{% load static %}
+{% block main_content %}
+<section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Информация о Вас</h3>
+              </div>
+              <form role="form" action="/edit_doctor_save/" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                <div class="card-body">
+                   <div class="form-group">
+                        <label>ФИО</label>
+                        <input type="text" class="form-control" placeholder="Введите ФИО пользователя" name="full_name" value="{{ doctor.admin.last_name }} {{ doctor.admin.first_name }} {{ doctor.surname }}">
+                       <input type="hidden" name="doctor_id" value="{{ doctor.admin.id }}">
+                    </div>
+                  <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" placeholder="Введите email" name="email" value="{{ doctor.admin.email }}">
+                  </div>
+                    <div class="form-group">
+                    <label>Дата Рождения</label>
+                    <input type="date" class="form-control" name="birth_date" value="{{ doctor.birth_date|date:"Y-m-d" }}">
+                  </div>
+                  <div class="form-group">
+                    <label>Пол</label>
+                    <select class="form-control" name="sex">
+                        <option {% if doctor.sex == "м" %} selected {% endif %}>Мужчина</option>
+                        <option {% if doctor.sex == "ж" %} selected {% endif %}>Женщина</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Номер телефона</label>
+                    <input type="tel" class="form-control" placeholder="Введите номер телефона" name="phone_number" value="{{ doctor.phone }}">
+                  </div>
+                  <div class="form-group">
+                    <label>Адрес</label>
+                    <input type="text" class="form-control" placeholder="Введите адрес проживания" name="address" value="{{ doctor.address }}">
+                  </div>
+                    <div class="form-group">
+                    <label>Квалификация врача</label>
+                    <select class="form-control" name="qualification">
+                        <option {% if doctor.qualification == "Вторая" %} selected {% endif %}>Вторая</option>
+                        <option {% if doctor.qualification == "Первая" %} selected {% endif %}>Первая</option>
+                        <option {% if doctor.qualification == "Высшая" %} selected {% endif %}>Высшая</option>
+                    </select>
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+          </div>
+      </div>
+    </section>
+{% endblock main_content %}

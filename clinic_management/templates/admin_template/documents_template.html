@@ -1,0 +1,128 @@
+{% extends 'admin_template/base_template.html' %}
+{% load static %}
+{% block page_title %} Документы {% endblock page_title %}
+{% block main_content %}
+<div class="card card-primary card-tabs">
+    <div class="card-header p-0 pt-1">
+        <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-add" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Документы врачей</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="custom-tabs-one-profile-tab" data-toggle="pill" href="#custom-tabs-manage" role="tab" aria-controls="custom-tabs-one-profile" aria-selected="false">Документы пациентов</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="tab-content" id="custom-tabs-one-tabContent">
+            <div class="tab-pane fade active show" id="custom-tabs-add" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                      <th>ID</th>
+                                      <th>Название</th>
+                                        <th>ФИО</th>
+                                      <th>Скачивание</th>
+                                        <th>Удаление</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Отчет за 01.01.2022 - 02.03.2022</td>
+                                        <td>Терентьева Евгения Викторовна</td>
+                                        <td><a href="#" class="btn btn-success">Скачать</a></td>
+                                        <td><a href="#" class="btn btn-danger">Удалить</a></td>
+                                    </tr>
+                                <tr>
+                                        <td>2</td>
+                                        <td>Отчет за 23.01.2020 - 15.08.2021</td>
+                                        <td>Терентьева Евгения Викторовна</td>
+                                        <td><a href="#" class="btn btn-success">Скачать</a></td>
+                                        <td><a href="#" class="btn btn-danger">Удалить</a></td>
+                                    </tr>
+                                <tr>
+                                        <td>3</td>
+                                        <td>Отчет за 11.09.2020 - 20.04.2022</td>
+                                        <td>Иванов Сергей Дмитриевич</td>
+                                        <td><a href="#" class="btn btn-success">Скачать</a></td>
+                                        <td><a href="#" class="btn btn-danger">Удалить</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="custom-tabs-manage" role="tabpanel" aria-labelledby="custom-tabs-one-profile-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                      <th>ID</th>
+                                      <th>Название</th>
+                                        <th>ФИО</th>
+                                      <th>Скачивание</th>
+                                        <th>Удаление</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   <tr>
+                                        <td>1</td>
+                                        <td>Паспортные данные</td>
+                                       <td>Николаев Николай Игоревич</td>
+                                        <td><a href="#" class="btn btn-success">Скачать</a></td>
+                                        <td><a href="#" class="btn btn-danger">Удалить</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Паспортные данные Юрьевич</td>
+                                       <td>Шариков Игорь Юрьевич</td>
+                                        <td><a href="#" class="btn btn-success">Скачать</a></td>
+                                        <td><a href="#" class="btn btn-danger">Удалить</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Снимок КТ</td>
+                                       <td>Кощина Евгения Евгениевна</td>
+                                        <td><a href="#" class="btn btn-success">Скачать</a></td>
+                                        <td><a href="#" class="btn btn-danger">Удалить</a></td>
+                                    </tr>
+                                <tr>
+                                        <td>4</td>
+                                        <td>Снимок КТ</td>
+                                       <td>Николаев Николай Игоревич</td>
+                                        <td><a href="#" class="btn btn-success">Скачать</a></td>
+                                        <td><a href="#" class="btn btn-danger">Удалить</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main_content %}

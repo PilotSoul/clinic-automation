@@ -1,6 +1,6 @@
-{% extends 'admin_template/base_template.html' %}
+{% extends 'staff_template/base_template.html' %}
 {% load static %}
-{% block page_title %} Здравствуйте, {{ user.username }} {% endblock page_title %}
+{% block page_title %} Главная {% endblock page_title %}
 {% block main_content %}
 <section class="content">
       <div class="container-fluid">
@@ -14,8 +14,7 @@
                       <div class="icon">
                           <i class="ion ion-bag"></i>
                       </div>
-                       {% url 'add_consumable' as add_consumable %}
-                      <a href="{{ add_consumable }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
+                      <a href="#" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
                   </div>
               </div>
           <!-- ./col -->
@@ -29,8 +28,8 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-                 {% url 'look_documents' as look_document %}
-              <a href="{{ look_document }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
+                 {% url 'create_document' as create_document %}
+              <a href="{{ create_document }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -38,15 +37,14 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>8</h3>
+                <h3>44</h3>
 
                 <p>Пользователи</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-                {% url 'show_users' as show_users %}
-              <a href="{{ show_users }}" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">Доп. информация<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <div class="col-lg-3 col-6">
@@ -63,8 +61,7 @@
             </div>
           </div>
         </div>
-      </div>
-    <div class="row">
+          <div class="row">
               <div class="card card-widget" style="width: 100%;">
                   <div class="card-header">
                       <div class="user-block">
@@ -120,5 +117,6 @@
                   </div>
               </div>
           </div>
+      </div>
     </section>
 {% endblock main_content %}

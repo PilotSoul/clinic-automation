@@ -1,0 +1,58 @@
+{% extends 'doctor_template/base_template.html' %}
+{% load static %}
+{% block page_title %} Прием {% endblock page_title %}
+{% block main_content %}
+<section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+                <div class="card card-primary" style="width: 40rem; margin: auto;">
+                  <div class="card-header">
+                    <h3 class="card-title">Редактирование приема</h3>
+                  </div>
+                    <form role="form" action="#" method="post"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="card-body">
+                              <div class="form-group">
+                                <label>Дата</label>
+                                <input type="date" class="form-control" name="birth_date">
+                              </div>
+                              <div class="form-group">
+                                <label>ФИО пациента</label>
+                                  <input type="text" class="form-control" placeholder="Введите ФИО пользователя" name="full_name" value="{{ patient.admin.last_name }} {{ patient.admin.first_name }} {{ patient.surname }}">
+                                  <input type="hidden" name="patient_id" value="Николаев Николай Игоревич">
+                              </div>
+                               <div class="form-group">
+                                <label>Комментарий</label>
+                                  <input type="text" class="form-control" placeholder="Введите ФИО пользователя" name="full_name" value="-">
+                              </div>
+                              <div class="form-group">
+                                <label>Услуги</label>
+                                <select class="form-control" name="sex">
+                                    <option>Чистка</option>
+                                    <option>Профессиональная чистка</option>
+                                    <option>Отбеливание</option>
+                                   <option>-</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label>Статус</label>
+                                <select class="form-control" name="sex">
+                                    <option>Запланирован</option>
+                                    <option>Выполнен</option>
+                                    <option>Отменен</option>
+                                </select>
+                          </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Сохранить</button>
+                        </div>
+                    </form>
+
+                </div>
+              </div>
+          </div>
+      </div>
+    </section>
+{% endblock main_content %}

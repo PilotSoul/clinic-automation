@@ -1,0 +1,115 @@
+{% extends 'staff_template/base_template.html' %}
+{% load static %}
+{% block page_title %} {{ patient.admin.last_name }} {{ patient.admin.first_name }} {% endblock page_title %}
+{% block main_content %}
+<section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">Изменение информации о пациенте</h3>
+                  </div>
+                    <form role="form" action="/edit_patient_save/" method="post"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="card-body">
+                              <div class="form-group">
+                                <label>ФИО</label>
+                                  <input type="text" class="form-control" placeholder="Введите ФИО пользователя" name="full_name" value="{{ patient.admin.last_name }} {{ patient.admin.first_name }} {{ patient.surname }}">
+                                  <input type="hidden" name="patient_id" value="{{ patient.admin.id }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="Введите email" name="email" value="{{ patient.admin.email }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Дата Рождения</label>
+                                <input type="date" class="form-control" name="birth_date" value="{{ patient.birth_date|date:"Y-m-d" }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Пол</label>
+                                <select class="form-control" name="sex">
+                                    <option {% if patient.sex == "м" %} selected {% endif %}>Мужчина</option>
+                                    <option {% if patient.sex == "ж" %} selected {% endif %}>Женщина</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label>Номер телефона</label>
+                                <input type="tel" class="form-control" placeholder="Введите номер телефона" name="phone_number" value="{{ patient.phone }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Адрес</label>
+                                <input type="text" class="form-control" placeholder="Введите адрес проживания" name="address" value="{{ patient.address }}">
+                              </div>
+                              <div class="form-group">
+                                  <label for="exampleInputFile">Прикрепить фото</label>
+                                  <input type="file" class="form-control" id="exampleInputFile" name="profile_pic">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              {% if messages %}
+                               <div class="col-4">
+                                  {% for message in messages %}
+                                  {% if message.tags == 'error' %}
+                                <div class="alert alert-danger" style="margin-top: 10px; margin-bottom: 10px;">{{ message }}</div>
+                                  {% endif %}
+                                    {% if message.tags == 'success' %}
+                                <div class="alert alert-success" style="margin-top: 10px; margin-bottom: 10px;">{{ message }}</div>
+                                  {% endif %}
+                                 {% endfor %}
+                              </div>
+                              {% endif %}
+                          </div>
+                        <div class="card-footer">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col col-sm-auto">
+                                        <form role="form" action="/edit_patient_save/" method="post" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-primary" value="change">Изменить</button>
+                                        </form>
+                                    </div>
+                                    <div class="col col-sm-auto">
+                                        <form role="form" action="#popup_window" method="post">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-danger" value="delete">Удалить</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                    <div id="popup_window">
+                        <div class="card card-danger">
+                            <div class="card-header">
+                                <h3 class="card-title">Удаление</h3>
+                            </div>
+                            <div class="card-body">
+                                Вы уверены, что хотите удалить {{ patient.admin.last_name }} {{ patient.admin.first_name }} ?
+                                <br>
+                                <br>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6">
+                                            <form role="form" action="/delete_patient/{{ patient.admin.id }}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" name="action" class="btn btn-block bg-gradient-success btn-sm w-15" value="Yes" >Да</button>
+                                            </form>
+                                        </div>
+                                        <div class="col-12s col-md-6">
+                                            <form role="form" action="/delete_patient/{{ patient.admin.id }}" method="post">
+                                                {% csrf_token %}
+                                                <button type="submit" name="action" class="btn btn-block bg-gradient-danger btn-sm w-15" value="No" >Нет</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+    </section>
+{% endblock main_content %}

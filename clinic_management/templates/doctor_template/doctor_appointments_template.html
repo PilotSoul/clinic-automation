@@ -1,0 +1,76 @@
+{% extends 'doctor_template/base_template.html' %}
+{% load static %}
+{% block page_title %} Записи {% endblock page_title %}
+{% block main_content %}
+<div class="card card-primary card-tabs">
+    <div class="card-header p-0 pt-1">
+        <ul class="nav nav-tabs" id="custom-tabs-one-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="custom-tabs-one-home-tab" data-toggle="pill" href="#custom-tabs-add" role="tab" aria-controls="custom-tabs-one-home" aria-selected="true">Список записей</a>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="tab-content" id="custom-tabs-one-tabContent">
+            <div class="tab-pane fade active show" id="custom-tabs-add" role="tabpanel" aria-labelledby="custom-tabs-one-home-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-tools">
+                            <div class="input-group input-group-sm" style="width: 150px;">
+                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card-body table-responsive p-0">
+                            <table class="table table-hover text-nowrap">
+                                <thead>
+                                    <tr>
+                                      <th>Дата</th>
+                                        <th>Время</th>
+                                      <th>Пациент</th>
+                                      <th>Комментарий</th>
+                                      <th>Услуги</th>
+                                      <th>Статус</th>
+                                      <th>Действие</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>11/10/2022</td>
+                                        <th>12:30</th>
+                                        <td>Николаев Николай Игоревич</td>
+                                        <td>Сделан снимок, брекеты будут созданы в течении двух недель</td>
+                                        <td>Снимок</td>
+                                      <td>Выполнен</td>
+                                      <td><a href="/edit_doctor_app/{{ user.id }}" class="btn btn-success">Редактировать</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>30/01/2022</td>
+                                        <th>17:00</th>
+                                        <td>Николаев Николай Игоревич</td>
+                                        <td>Требуется вторичный прием</td>
+                                        <td>Чистка зубов + осмотр</td>
+                                      <td>Выполнен</td>
+                                      <td><a href="/edit_doctor_app/{{ user.id }}" class="btn btn-success">Редактировать</a></td>
+                                    </tr>
+                                  <tr>
+                                        <td>9/12/2022</td>
+                                        <th>15:00</th>
+                                        <td>Николаев Николай Игоревич</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                      <td>Запланирован</td>
+                                    <td><a href="/edit_doctor_app/{{ user.id }}" class="btn btn-success">Редактировать</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main_content %}

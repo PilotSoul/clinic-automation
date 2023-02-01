@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from django.urls import reverse
 
 from clinic_management.EmailBackend import EmailBackend
 
@@ -21,9 +22,14 @@ def doLogin(request):
         user = EmailBackend.authenticate(request, username=request.POST.get("email"), password=request.POST.get("password"))
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect("/admin_home")
+            if user.user_type=='1':
+                return HttpResponseRedirect(reverse("admin_home"))
+            elif user.user_type=='2':
+                return HttpResponseRedirect(reverse("patient_home"))
+            elif user.user_type=='3':
+                return HttpResponseRedirect(reverse("doctor_home"))
         else:
-            messages.error(request, "Login Invalid")
+            messages.error(request, "Логин или пароль введены неверно")
             return HttpResponseRedirect("/")
 
 

@@ -1,0 +1,54 @@
+{% extends 'patient_template/base_template.html' %}
+{% load static %}
+{% block page_title %} Ваш профиль {% endblock page_title %}
+{% block main_content %}
+<section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+                <div class="card card-primary" style="width: 40rem; margin: auto;">
+                  <div class="card-header">
+                    <h3 class="card-title">Информация о вас</h3>
+                  </div>
+                    <form role="form" action="/edit_patient_save/" method="post"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="card-body">
+                              <div class="form-group">
+                                <label>ФИО</label>
+                                  <input type="text" class="form-control" placeholder="Введите ФИО пользователя" name="full_name" value="{{ patient.admin.last_name }} {{ patient.admin.first_name }} {{ patient.surname }}">
+                                  <input type="hidden" name="patient_id" value="{{ patient.admin.id }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="Введите email" name="email" value="{{ patient.admin.email }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Дата Рождения</label>
+                                <input type="date" class="form-control" name="birth_date" value="{{ patient.birth_date|date:"Y-m-d" }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Пол</label>
+                                <select class="form-control" name="sex">
+                                    <option {% if patient.sex == "м" %} selected {% endif %}>Мужчина</option>
+                                    <option {% if patient.sex == "ж" %} selected {% endif %}>Женщина</option>
+                                </select>
+                              </div>
+                              <div class="form-group">
+                                <label>Номер телефона</label>
+                                <input type="tel" class="form-control" placeholder="Введите номер телефона" name="phone_number" value="{{ patient.phone }}">
+                              </div>
+                              <div class="form-group">
+                                <label>Адрес</label>
+                                <input type="text" class="form-control" placeholder="Введите адрес проживания" name="address" value="{{ patient.address }}">
+                              </div>
+                            </div>
+
+                    </form>
+
+                </div>
+              </div>
+          </div>
+      </div>
+    </section>
+{% endblock main_content %}

@@ -1,0 +1,221 @@
+{% extends 'patient_template/base_template.html' %}
+{% block page_title %}
+Календарь
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-md">
+            <div class="card card-primary">
+              <div class="card-body p-0">
+                <!-- THE CALENDAR -->
+                <div id="calendar" class="fc fc-ltr fc-unthemed" style="">
+                  <div class="fc-toolbar fc-header-toolbar">
+                    <div class="fc-left"><div class="fc-button-group">
+                      <button type="button" class="fc-prev-button fc-button fc-button-primary" aria-label="prev">
+                        <span class="fc-icon fc-icon-chevron-left"></span>
+                      </button>
+                      <button type="button" class="fc-next-button fc-button fc-button-primary" aria-label="next">
+                        <span class="fc-icon fc-icon-chevron-right"></span>
+                      </button>
+                    </div>
+                      <button type="button" class="fc-today-button fc-button fc-button-primary" disabled="">Врач: Иванов Иван</button>
+                    </div>
+                    <div class="fc-center"><h2>Декабрь 2022</h2></div>
+                    <div class="fc-right">
+                      <div class="fc-button-group">
+                        <button type="button" class="fc-dayGridMonth-button fc-button fc-button-primary fc-button-active">записаться</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fc-view-container"><div class="fc-view fc-dayGridMonth-view fc-dayGrid-view" style="">
+                    <table class="">
+                      <thead class="fc-head">
+                      <tr>
+                        <td class="fc-head-container fc-widget-header">
+                          <div class="fc-row fc-widget-header">
+                            <table class="">
+                              <thead>
+                              <tr>
+                                <th class="fc-day-header fc-widget-header fc-sun">
+                                  <span>Пн</span>
+                                </th>
+                                <th class="fc-day-header fc-widget-header fc-mon">
+                                  <span>Вт</span>
+                                </th>
+                                <th class="fc-day-header fc-widget-header fc-tue">
+                                  <span>Ср</span>
+                                </th>
+                                <th class="fc-day-header fc-widget-header fc-wed">
+                                  <span>Чт</span>
+                                </th>
+                                <th class="fc-day-header fc-widget-header fc-thu">
+                                  <span>Пт</span>
+                                </th>
+                                <th class="fc-day-header fc-widget-header fc-fri">
+                                  <span>Сб</span>
+                                </th>
+                                <th class="fc-day-header fc-widget-header fc-sat">
+                                  <span>Вс</span>
+                                </th>
+                              </tr>
+                              </thead>
+                            </table>
+                          </div>
+                        </td>
+                      </tr>
+                      </thead>
+                      <tbody class="fc-body">
+                      <tr>
+                        <td class="fc-widget-content">
+                          <div class="fc-scroller fc-day-grid-container" style="overflow: hidden; height: 614px;">
+                            <div class="fc-day-grid">
+                              <div class="fc-row fc-week fc-widget-content" style="height: 102px;">
+                                <div class="fc-bg">
+                                  <table class="">
+                                    <tbody>
+                                    <tr>
+                                      <td class="fc-day fc-widget-content fc-sun fc-other-month fc-past" data-date="2022-11-27"></td>
+                                      <td class="fc-day fc-widget-content fc-mon fc-other-month fc-past" data-date="2022-11-28"></td>
+                                      <td class="fc-day fc-widget-content fc-tue fc-other-month fc-past" data-date="2022-11-29"></td>
+                                      <td class="fc-day fc-widget-content fc-wed fc-other-month fc-past" data-date="2022-11-30"></td>
+                                      <td class="fc-day fc-widget-content fc-thu fc-past" data-date="2022-12-01"></td>
+                                      <td class="fc-day fc-widget-content fc-fri fc-past" data-date="2022-12-02"></td>
+                                      <td class="fc-day fc-widget-content fc-sat fc-today " data-date="2022-12-03"></td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div class="fc-content-skeleton">
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <td class="fc-day-top fc-sun fc-other-month fc-past" data-date="2022-11-27">
+                                          <span class="fc-day-number">27</span>
+                                        </td>
+                                        <td class="fc-day-top fc-mon fc-other-month fc-past" data-date="2022-11-28">
+                                          <span class="fc-day-number">28</span>
+                                        </td>
+                                        <td class="fc-day-top fc-tue fc-other-month fc-past" data-date="2022-11-29">
+                                          <span class="fc-day-number">29</span>
+                                        </td>
+                                        <td class="fc-day-top fc-wed fc-other-month fc-past" data-date="2022-11-30">
+                                          <span class="fc-day-number">30</span>
+                                        </td>
+                                        <td class="fc-day-top fc-thu fc-past" data-date="2022-12-01">
+                                          <span class="fc-day-number">1</span>
+                                        </td>
+                                        <td class="fc-day-top fc-fri fc-past" data-date="2022-12-02">
+                                          <span class="fc-day-number">2</span>
+                                        </td>
+                                        <td class="fc-day-top fc-sat fc-today " data-date="2022-12-03">
+                                          <span class="fc-day-number">3</span>
+                                        </td>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td class="fc-event-container" colspan="4">
+                                        <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable fc-resizable" href="http://google.com/"  style="background-color:#f56954;border-color:#f56954">
+                                          <div class="fc-content">
+                                            <span class="fc-title">Занят</span>
+                                          </div>
+                                          <div class="fc-resizer fc-end-resizer"></div>
+                                        </a>
+                                      </td>
+                                      <td class="fc-event-container" rowspan="2">
+                                        <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable fc-resizable" style="background-color:#E1E7E5;border-color:#E1E7E5">
+                                          <div class="fc-content">
+                                            <span class="fc-title">Нерабочий</span>
+                                          </div>
+                                          <div class="fc-resizer fc-end-resizer"></div>
+                                        </a>
+                                      </td>
+                                      <td rowspan="2"></td>
+                                      <td rowspan="2"></td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="fc-row fc-week fc-widget-content" style="height: 102px;">
+                                <div class="fc-bg">
+                                  <table class="">
+                                    <tbody>
+                                    <tr>
+                                      <td class="fc-day fc-widget-content fc-sun fc-future" data-date="2022-12-04"></td>
+                                      <td class="fc-day fc-widget-content fc-mon fc-future" data-date="2022-12-05"></td>
+                                      <td class="fc-day fc-widget-content fc-tue fc-future" data-date="2022-12-06"></td>
+                                      <td class="fc-day fc-widget-content fc-wed fc-future" data-date="2022-12-07"></td>
+                                      <td class="fc-day fc-widget-content fc-thu fc-future" data-date="2022-12-08"></td>
+                                      <td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-12-09"></td>
+                                      <td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-12-10"></td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <div class="fc-content-skeleton">
+                                  <table>
+                                    <thead>
+                                    <tr>
+                                      <td class="fc-day-top fc-sun fc-future" data-date="2022-12-04">
+                                        <span class="fc-day-number">4</span>
+                                      </td>
+                                      <td class="fc-day-top fc-mon fc-future" data-date="2022-12-05">
+                                        <span class="fc-day-number">5</span>
+                                      </td>
+                                      <td class="fc-day-top fc-tue fc-future" data-date="2022-12-06">
+                                        <span class="fc-day-number">6</span>
+                                      </td>
+                                      <td class="fc-day-top fc-wed fc-future" data-date="2022-12-07">
+                                        <span class="fc-day-number">7</span>
+                                      </td>
+                                      <td class="fc-day-top fc-thu fc-future" data-date="2022-12-08">
+                                        <span class="fc-day-number">8</span>
+                                      </td>
+                                      <td class="fc-day-top fc-fri fc-future" data-date="2022-12-09">
+                                        <span class="fc-day-number">9</span>
+                                      </td>
+                                      <td class="fc-day-top fc-sat fc-future" data-date="2022-12-10">
+                                        <span class="fc-day-number">10</span>
+                                      </td>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                       <td class="fc-event-container" colspan="1">
+                                        <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable" href="http://google.com/"  style="background-color:#f56954;border-color:#f56954">
+                                          <div class="fc-content">
+                                            <span class="fc-title">Занят</span>
+                                          </div>
+                                        </a>
+                                      </td>
+                                      <td></td>
+                                      <td></td>
+                                    </tr>
+                                    </tbody>
+                                  </table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 102px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2022-12-11"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2022-12-12"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2022-12-13"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2022-12-14"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2022-12-15"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-12-16"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-12-17"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2022-12-11"><span class="fc-day-number">11</span></td><td class="fc-day-top fc-mon fc-future" data-date="2022-12-12"><span class="fc-day-number">12</span></td><td class="fc-day-top fc-tue fc-future" data-date="2022-12-13"><span class="fc-day-number">13</span></td><td class="fc-day-top fc-wed fc-future" data-date="2022-12-14"><span class="fc-day-number">14</span></td><td class="fc-day-top fc-thu fc-future" data-date="2022-12-15"><span class="fc-day-number">15</span></td><td class="fc-day-top fc-fri fc-future" data-date="2022-12-16"><span class="fc-day-number">16</span></td><td class="fc-day-top fc-sat fc-future" data-date="2022-12-17"><span class="fc-day-number">17</span></td></tr></thead><tbody><tr><td></td>
+                              <td class="fc-event-container">
+                              </td>
+                              <td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 102px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2022-12-18"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2022-12-19"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2022-12-20"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2022-12-21"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2022-12-22"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-12-23"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-12-24"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2022-12-18"><span class="fc-day-number">18</span></td><td class="fc-day-top fc-mon fc-future" data-date="2022-12-19"><span class="fc-day-number">19</span></td><td class="fc-day-top fc-tue fc-future" data-date="2022-12-20"><span class="fc-day-number">20</span></td><td class="fc-day-top fc-wed fc-future" data-date="2022-12-21"><span class="fc-day-number">21</span></td><td class="fc-day-top fc-thu fc-future" data-date="2022-12-22"><span class="fc-day-number">22</span></td><td class="fc-day-top fc-fri fc-future" data-date="2022-12-23"><span class="fc-day-number">23</span></td><td class="fc-day-top fc-sat fc-future" data-date="2022-12-24"><span class="fc-day-number">24</span></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 102px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-future" data-date="2022-12-25"></td><td class="fc-day fc-widget-content fc-mon fc-future" data-date="2022-12-26"></td><td class="fc-day fc-widget-content fc-tue fc-future" data-date="2022-12-27"></td><td class="fc-day fc-widget-content fc-wed fc-future" data-date="2022-12-28"></td><td class="fc-day fc-widget-content fc-thu fc-future" data-date="2022-12-29"></td><td class="fc-day fc-widget-content fc-fri fc-future" data-date="2022-12-30"></td><td class="fc-day fc-widget-content fc-sat fc-future" data-date="2022-12-31"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-future" data-date="2022-12-25"><span class="fc-day-number">25</span></td><td class="fc-day-top fc-mon fc-future" data-date="2022-12-26"><span class="fc-day-number">26</span></td><td class="fc-day-top fc-tue fc-future" data-date="2022-12-27"><span class="fc-day-number">27</span></td><td class="fc-day-top fc-wed fc-future" data-date="2022-12-28"><span class="fc-day-number">28</span></td><td class="fc-day-top fc-thu fc-future" data-date="2022-12-29"><span class="fc-day-number">29</span></td><td class="fc-day-top fc-fri fc-future" data-date="2022-12-30"><span class="fc-day-number">30</span></td><td class="fc-day-top fc-sat fc-future" data-date="2022-12-31"><span class="fc-day-number">31</span></td></tr></thead><tbody><tr><td></td><td></td><td></td>
+                              <td class="fc-event-container">
+                                <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable" href="http://google.com/"  style="background-color:#f56954;border-color:#f56954">
+                                  <div class="fc-content">
+                                    <span class="fc-title">Занят</span>
+                                  </div></a></td><td></td><td></td><td></td></tr></tbody></table></div></div><div class="fc-row fc-week fc-widget-content" style="height: 104px;"><div class="fc-bg"><table class=""><tbody><tr><td class="fc-day fc-widget-content fc-sun fc-other-month fc-future" data-date="2023-01-01"></td><td class="fc-day fc-widget-content fc-mon fc-other-month fc-future" data-date="2023-01-02"></td><td class="fc-day fc-widget-content fc-tue fc-other-month fc-future" data-date="2023-01-03"></td><td class="fc-day fc-widget-content fc-wed fc-other-month fc-future" data-date="2023-01-04"></td><td class="fc-day fc-widget-content fc-thu fc-other-month fc-future" data-date="2023-01-05"></td><td class="fc-day fc-widget-content fc-fri fc-other-month fc-future" data-date="2023-01-06"></td><td class="fc-day fc-widget-content fc-sat fc-other-month fc-future" data-date="2023-01-07"></td></tr></tbody></table></div><div class="fc-content-skeleton"><table><thead><tr><td class="fc-day-top fc-sun fc-other-month fc-future" data-date="2023-01-01"><span class="fc-day-number">1</span></td><td class="fc-day-top fc-mon fc-other-month fc-future" data-date="2023-01-02"><span class="fc-day-number">2</span></td><td class="fc-day-top fc-tue fc-other-month fc-future" data-date="2023-01-03"><span class="fc-day-number">3</span></td><td class="fc-day-top fc-wed fc-other-month fc-future" data-date="2023-01-04"><span class="fc-day-number">4</span></td><td class="fc-day-top fc-thu fc-other-month fc-future" data-date="2023-01-05"><span class="fc-day-number">5</span></td><td class="fc-day-top fc-fri fc-other-month fc-future" data-date="2023-01-06"><span class="fc-day-number">6</span></td><td class="fc-day-top fc-sat fc-other-month fc-future" data-date="2023-01-07"><span class="fc-day-number">7</span></td></tr></thead><tbody><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></div></div></div></div></td></tr></tbody></table></div></div></div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}

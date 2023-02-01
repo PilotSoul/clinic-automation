@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'clinic_management.login_check_middleware.LoginCheckMiddleware'
 ]
 
 ROOT_URLCONF = 'config.urls'
